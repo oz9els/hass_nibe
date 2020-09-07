@@ -1,0 +1,37 @@
+{
+    "config": {
+        "title": "Nibe Uplink",
+        "step": {
+            "user": {
+                "title": "Konfigurer Uplink parametre",
+                "description": "Der skal konfigureres en application på Nibe Uplinks [Application]({application}) side. Redirect url skal pege på din Home Assistant, den behøver ikke at være offentlig tilgæmgelig, den skal bare være tilgængelig fra denne computer. Vær sikker på den peger på api endpoint ({suffix})",
+                "data": {
+                    "redirect_uri": "Callback URL",
+                    "client_id": "Identifier",
+                    "client_secret": "Secret",
+                    "writeaccess": "Write Access (Dette kræver et abonnement)"
+                }
+            },
+            "auth": {
+                "title": "Autoriser Home Assistant til Nibe Uplink",
+                "description": "Gå til Nibe Uplink authorization side for at autentificere Home Assistant",
+                "data": {
+                    "code": "Koden er inkluderet i redirect uri"
+                }
+            },
+            "systems": {
+                "data": {
+                    "systems": "Vælg systemer"
+                },
+                "description": "Vælg hvilke Nibe systemer der skal monitoreres",
+                "title": "System valg"
+            }
+        },
+        "error": {
+            "code": "Kunne ikke få access token fra koden. Mere information i Home Assistant log"
+        },
+        "abort": {
+            "already_configured": "Uplink er allerede konfigureret"
+        }
+    }
+}
